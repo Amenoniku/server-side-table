@@ -2,12 +2,12 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 // Modules
-import contacts from "./modules/contacts";
+import organizations from "./modules/organizations";
 
 Vue.use(Vuex);
 
 const modules = {
-  contacts
+  organizations
 };
 
 export default new Vuex.Store({

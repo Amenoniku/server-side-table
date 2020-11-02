@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
   name: "Table",
   data() {
@@ -32,6 +33,9 @@ export default {
         { text: "Iron (%)", value: "iron" }
       ]
     };
+  },
+  computed: {
+    ...mapState("organizations", ["list"])
   },
   watch: {
     options: {
@@ -175,7 +179,11 @@ export default {
           iron: "6%"
         }
       ];
-    }
+    },
+    ...mapActions("organizations", ["getList"])
+  },
+  created() {
+    this.getList();
   }
 };
 </script>
